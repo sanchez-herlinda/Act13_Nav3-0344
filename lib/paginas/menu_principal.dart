@@ -26,16 +26,31 @@ class MenuPrincipal extends StatelessWidget {
           ),
         ],
         centerTitle: true,
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text('La', style: GoogleFonts.playfairDisplay(fontSize: 12, color: appData.textColor)),
-            const SizedBox(width: 2),
-            Text('ROMA',
-                style: GoogleFonts.playfairDisplay(
-                    fontSize: 24, fontWeight: FontWeight.bold, color: appData.textColor, height: 0.9)),
-          ],
+        title: GestureDetector(
+          onTap: () {
+            // Navega a la landing_page. 
+            // Asegúrate de que '/landing_page' esté definida en las rutas de tu MaterialApp
+            Navigator.pushNamed(context, '/landing_page');
+          },
+          child: MouseRegion( // Opcional: cambia el cursor a mano en web
+            cursor: SystemMouseCursors.click,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text('La',
+                    style: GoogleFonts.playfairDisplay(
+                        fontSize: 12, color: appData.textColor)),
+                const SizedBox(width: 2),
+                Text('ROMA',
+                    style: GoogleFonts.playfairDisplay(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: appData.textColor,
+                        height: 0.9)),
+              ],
+            ),
+          ),
         ),
       ),
       body: SingleChildScrollView(

@@ -40,7 +40,12 @@ class MyApp extends StatelessWidget {
           // RUTAS NOMBRADAS
           initialRoute: '/',
           routes: {
+            // El identificador '/' carga la Landing Page al iniciar
             '/': (context) => const RomaLandingPage(),
+            
+            // Esta es la ruta que llamamos desde el logo en MenuPrincipal
+            '/landing_page': (context) => const RomaLandingPage(), 
+            
             '/menu': (context) => const MenuPrincipal(),
             '/recomendaciones': (context) => const PaginaRecomendaciones(),
           },
